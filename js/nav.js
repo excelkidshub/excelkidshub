@@ -38,6 +38,7 @@ const footerHTML = `
 <div>
 <h3>Quick Links</h3>
 <a href="/">Home</a><br>
+<a href="about">About Us</a><br>
 <a href="courses">Courses</a><br>
 <a href="schedule">Schedule</a><br>
 <a href="gallery">Gallery</a><br>
