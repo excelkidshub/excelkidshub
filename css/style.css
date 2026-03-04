@@ -922,3 +922,94 @@ margin-top: 10px;
   color: #1a237e;
   text-align: center;
 }
+
+/* ===== ABOUT PAGE FINAL DESIGN ===== */
+
+.about-hero {
+  background: url('https://images.unsplash.com/photo-1509062522246-3755977927d7') center/cover no-repeat;
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  padding: 40px 0;
+}
+
+.about-hero h1 {
+  color: #fff;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.about-hero p {
+  color: #f0f0f0;
+  font-size: 15px;
+}
+
+.about-content {
+  padding: 40px 0;
+}
+
+.about-content h2 {
+  font-size: 20px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #ff7a00;
+}
+
+.about-content p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.content-list {
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.content-list li {
+  margin-bottom: 6px;
+}
+
+.cert-box {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #ff914d;
+  margin-top: 10px;
+}
+
+.cert-box ul {
+  padding-left: 18px;
+}
+
+.cert-box li {
+  margin-bottom: 8px;
+}
+
+.about-cta {
+  background: #ff914d;
+  text-align: center;
+  padding: 30px 0;
+  color: #fff;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 22px;
+  background: #fff;
+  color: #ff914d;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.cta-btn:hover {
+  background: #f2f2f2;
+}
