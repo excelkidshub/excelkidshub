@@ -1013,3 +1013,26 @@ margin-top: 10px;
 .cta-btn:hover {
   background: #f2f2f2;
 }
+
+.about-content h2 {
+  color: #16a34a; /* positive green */
+}
+
+.cert-box {
+  border-left: 4px solid #16a34a; /* green */
+}
+
+.about-cta {
+  background: linear-gradient(135deg, #d9fdd3, #16a34a33); /* light green fade */
+  text-align: center;
+  padding: 30px 0;
+  color: #1a4732; /* dark green for text, readable */
+}
+
+.cta-btn {
+  color: #16a34a; /* CTA button text */
+}
+
+.cta-btn:hover {
+  background: #f2f2f2;
+}
