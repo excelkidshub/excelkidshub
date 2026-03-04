@@ -40,8 +40,9 @@ const footerHTML = `
 <a href="/">Home</a><br>
 <a href="courses">Courses</a><br>
 <a href="schedule">Schedule</a><br>
-<a href="gallery">Gallery</a>
-<a href="contact">Contact</a>
+<a href="gallery">Gallery</a><br>
+<a href="contact">Contact</a><br>
+<a href="blog">Our Blog</a>
 </div>
 
 <div>
