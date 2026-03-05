@@ -1343,18 +1343,31 @@ margin-top: 10px;
   font-weight: bold;
 }
 .faq-answer {
-  display: none;
-  padding: 0 22px 18px 22px;
+  /*collapsed by default*/
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 22px 0 22px;
   color: #444;
   font-size: 1rem;
+  /* slightly stand out as an answer block */
+  background: #f9fafb;
+  border-left: 4px solid #facc15;
+  transition: max-height 0.35s ease, padding 0.35s ease;
 }
+
+.faq-item.active .faq-answer {
+  max-height: 400px; /* enough for most answers */
+  padding: 0 22px 18px 22px;
+}
+
 .faq-item.active .faq-answer {
   display: block;
 }
 .faq-item.active .faq-toggle {
-  transform: rotate(45deg);
+  /* keep minus symbol without rotating */
   color: #facc15;
 }
+
 /* GLOBAL */
 body{
 margin:0;

@@ -2,7 +2,7 @@ const navigationHTML = `
 <div class="container nav-container">
 
     <div class="logo-area">
-        <a href="index.html">
+        <a href="/">
             <img src="images/logo.svg" alt="ExcelKidsHub Phonics Academy Logo">
         </a>
         <a href="tel:+918793135679" class="header-phone">
@@ -96,10 +96,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Active Menu Highlight
-    const currentPage = window.location.pathname.split("/").pop();
+    const currentPage = window.location.pathname.replace(/\/$/, '').split("/").pop();
     const navLinks = document.querySelectorAll(".nav-links a");
     navLinks.forEach(link => {
-        if(link.getAttribute("href") === currentPage){
+        let href = link.getAttribute("href").replace(/\/$/, '');
+        href = href.replace(/^\//, '');
+        if ((currentPage === "" && href === "") || href === currentPage) {
             link.classList.add("active-link");
         }
     });
