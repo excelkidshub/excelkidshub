@@ -3,13 +3,13 @@ const navigationHTML = `
 
     <div class="logo-area">
         <a href="/">
-            <img src="images/logo.svg" alt="ExcelKidsHub Phonics Academy Logo">
+            <img width="180" height="48" loading="lazy" decoding="async" src="images/logo.svg" alt="ExcelKidsHub Phonics Academy Logo">
         </a>
     </div>
 
     <div class="call-button">
         <a href="tel:+918793135679" aria-label="Call us">
-            <img src="https://res.cloudinary.com/dhqvlsb3l/image/upload/v1/assets/na/seo-website/icon-phone-round.svg" alt="Call ExcelKidsHub" class="call-icon-img">
+            <img width="40" height="40" loading="lazy" decoding="async" src="images/icon/icon-phone-round.svg" alt="Call ExcelKidsHub" class="call-icon-img">
         </a>
     </div>
 
@@ -31,25 +31,25 @@ const navigationHTML = `
 `;
 
 const footerHTML = `
-<footer style="background:#1a1a2e;color:#fff;padding:0;margin-top:40px;font-family:'Poppins',sans-serif;">
+<footer style="background:#1a1a2e;color:#fff;padding:0;margin-top:40px;font-family:'Segoe UI', Tahoma, Arial, sans-serif;">
     <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
         <div style="display:flex;flex-wrap:wrap;gap:40px;padding:48px 0 24px 0;">
             <div style="flex:1 1 220px;min-width:220px;max-width:340px;">
-                <img src="images/logo.svg" alt="ExcelKidsHub Logo" style="height:54px;background:#fff;padding:8px 24px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:18px;">
+                <img loading="lazy" decoding="async" src="images/logo.svg" alt="ExcelKidsHub Logo" style="height:54px;background:#fff;padding:8px 24px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.07);margin-bottom:18px;">
                 <p style="margin-bottom:14px;">ExcelKidsHub Phonics Academy<br><span style="font-size:13px;opacity:0.8;">Structured phonics classes for children in Dhanori, Pune. Building strong readers, spellers, and communicators.</span></p>
                 <div style="margin:18px 0 10px 0;">
                     <div class="c-trust-mini-row c-trust-mini-row--footer" style="display:flex;gap:28px;align-items:center;">
                         <div class="c-trust-mini-row__col" style="text-align:center;">
                             <a href="https://www.google.com/search?q=excelkidshub+phonics+academy+dhanori+pune+reviews" target="_blank" rel="noreferrer">
-                                <img class="o-fluid-img" src="https://www.pngall.com/wp-content/uploads/17/Five-Star-Review-Google-Business-Rating-PNG.png" alt="Google reviews 5 star" loading="lazy" style="height:38px;width:auto;object-fit:contain;border-radius:6px;padding:2px 8px;box-shadow:0 2px 8px rgba(0,0,0,0.10);">
+                                <img width="160" height="38" class="o-fluid-img" src="images/icon/Five-Star-Review-Google-Business-Rating-PNG.png" alt="Google reviews 5 star" loading="lazy" decoding="async" style="height:38px;width:auto;object-fit:contain;border-radius:6px;padding:2px 8px;box-shadow:0 2px 8px rgba(0,0,0,0.10);">
                             </a>
                         </div>
                         <div class="c-trust-mini-row__col" style="text-align:center;">
-                            <img src="https://img.icons8.com/color/48/000000/verified-account--v2.png" alt="Udyam Registered" style="height:32px;width:32px;background:#fff;border-radius:6px;padding:2px;box-shadow:0 2px 8px rgba(0,0,0,0.10);">
+                            <img width="32" height="32" loading="lazy" decoding="async" src="images/icon/verified-account--v2.png" alt="Udyam Registered" style="height:32px;width:32px;background:#fff;border-radius:6px;padding:2px;box-shadow:0 2px 8px rgba(0,0,0,0.10);">
                             <div style="font-size:12px;color:#fff;opacity:0.8;">Govt. Registered</div>
                         </div>
                         <div class="c-trust-mini-row__col" style="text-align:center;">
-                            <img src="https://img.icons8.com/color/48/000000/certificate.png" alt="ISO 9001:2015" style="height:32px;width:32px;background:#fff;border-radius:6px;padding:2px;box-shadow:0 2px 8px rgba(0,0,0,0.10);">
+                            <img width="32" height="32" loading="lazy" decoding="async" src="images/icon/certificate.png" alt="ISO 9001:2015" style="height:32px;width:32px;background:#fff;border-radius:6px;padding:2px;box-shadow:0 2px 8px rgba(0,0,0,0.10);">
                             <div style="font-size:12px;color:#fff;opacity:0.8;">ISO 9001:2015</div>
                         </div>
                     </div>
@@ -77,9 +77,9 @@ const footerHTML = `
             <div style="flex:1 1 220px;min-width:220px;max-width:340px;">
                 <h3 style="color:#facc15;">Follow Us</h3>
                 <div style="display:flex;gap:14px;margin-top:10px;">
-                    <a href="https://www.facebook.com/excelkidshubphonics/" target="_blank" aria-label="Facebook"><img src="https://res.cloudinary.com/dhqvlsb3l/image/upload/v1/assets/na/seo-website/icon-facebook.svg" alt="Facebook" style="width:32px;height:32px;background:#fff;border-radius:50%;padding:4px;box-sizing:content-box;box-shadow:0 2px 8px rgba(0,0,0,0.10);"></a>
-                      <a href="https://www.instagram.com/excelkidshub/" target="_blank" aria-label="Instagram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width:32px;height:32px;background:#fff;border-radius:50%;padding:4px;box-sizing:content-box;box-shadow:0 2px 8px rgba(0,0,0,0.10);"></a>
-                        <a href="https://www.pinterest.com/excelkidshub/" target="_blank" aria-label="Pinterest"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/pinterest.svg" alt="Pinterest" style="width:32px;height:32px;background:#fff;border-radius:50%;padding:4px;box-sizing:content-box;box-shadow:0 2px 8px rgba(0,0,0,0.10);"></a>
+                    <a href="https://www.facebook.com/excelkidshubphonics/" target="_blank" aria-label="Facebook"><img width="32" height="32" loading="lazy" decoding="async" src="images/icon/icon-facebook.svg" alt="Facebook" style="width:32px;height:32px;background:#fff;border-radius:50%;padding:4px;box-sizing:content-box;box-shadow:0 2px 8px rgba(0,0,0,0.10);"></a>
+                      <a href="https://www.instagram.com/excelkidshub/" target="_blank" aria-label="Instagram"><img width="32" height="32" loading="lazy" decoding="async" src="images/icon/instagram.svg" alt="Instagram" style="width:32px;height:32px;background:#fff;border-radius:50%;padding:4px;box-sizing:content-box;box-shadow:0 2px 8px rgba(0,0,0,0.10);"></a>
+                        <a href="https://www.pinterest.com/excelkidshub/" target="_blank" aria-label="Pinterest"><img width="32" height="32" loading="lazy" decoding="async" src="images/icon/pinterest.svg" alt="Pinterest" style="width:32px;height:32px;background:#fff;border-radius:50%;padding:4px;box-sizing:content-box;box-shadow:0 2px 8px rgba(0,0,0,0.10);"></a>
                         
                 </div>
             </div>

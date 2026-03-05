@@ -1,13 +1,3 @@
-let groups=document.querySelectorAll(".testimonial-group");
-let dots=document.querySelectorAll(".dot");
-
-function showGroup(n){
-groups.forEach(g=>g.classList.remove("active-group"));
-dots.forEach(d=>d.classList.remove("active-dot"));
-groups[n].classList.add("active-group");
-dots[n].classList.add("active-dot");
-}
-
 window.addEventListener("scroll", function(){
     const header = document.querySelector("header");
     if(window.scrollY > 50){
@@ -46,8 +36,24 @@ const images = [
 const imagesPerPage = 6;
 const galleryGrid = document.getElementById("galleryGrid");
 const dots = document.querySelectorAll(".gallery-dots .dot");
+const tinyPlaceholder = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+
+function loadGalleryImage(img) {
+    if (!img.dataset.src) return;
+    const clearLoadingState = () => {
+        img.classList.remove("is-loading");
+    };
+    img.addEventListener("load", clearLoadingState, { once: true });
+    img.addEventListener("error", clearLoadingState, { once: true });
+    img.src = img.dataset.src;
+    if (img.complete) {
+        clearLoadingState();
+    }
+    img.removeAttribute("data-src");
+}
 
 function showPage(page){
+    if (!galleryGrid) return;
     galleryGrid.innerHTML = "";
 
     const start = page * imagesPerPage;
@@ -55,32 +61,78 @@ function showPage(page){
 
     images.slice(start, end).forEach(src => {
         const img = document.createElement("img");
-        img.src = src;
+        img.src = tinyPlaceholder;
+        img.dataset.src = src;
+        img.width = 600;
+        img.height = 400;
         img.alt = "Phonics class in Dhanori Pune";
         img.loading = "lazy";
+        img.decoding = "async";
+        img.classList.add("gallery-lazy", "is-loading");
+        loadGalleryImage(img);
         galleryGrid.appendChild(img);
     });
 
     dots.forEach(dot => dot.classList.remove("active-dot"));
-    dots[page].classList.add("active-dot");
+    if (dots[page]) {
+        dots[page].classList.add("active-dot");
+    }
 }
 
 window.showPage = showPage; // Important for onclick to work
-showPage(0);
+if (galleryGrid) {
+    showPage(0);
+}
 
 });
 
 
-const testimonialGallery = document.querySelector('.testimonial-gallery');
-const testimonialDots = document.querySelectorAll('.gallery-dots .dot');
+const testimonialSection = document.querySelector(".testimonials");
+const testimonialGallery = testimonialSection ? testimonialSection.querySelector(".testimonial-gallery") : null;
+const testimonialDots = testimonialSection ? testimonialSection.querySelectorAll(".gallery-dots .dot") : [];
+const testimonialCardsPerPage = 3;
+
+function loadTestimonialImages(page) {
+  if (!testimonialGallery) return;
+  const start = page * testimonialCardsPerPage;
+  const end = start + testimonialCardsPerPage;
+  const cards = testimonialGallery.querySelectorAll(".testimonial-card");
+
+  cards.forEach((card, index) => {
+    if (index < start || index >= end) return;
+    const img = card.querySelector("img[data-src]");
+    if (img && img.dataset.src) {
+      const clearLoadingState = () => {
+        img.classList.remove("is-loading");
+      };
+      img.addEventListener("load", clearLoadingState, { once: true });
+      img.addEventListener("error", clearLoadingState, { once: true });
+      img.src = img.dataset.src;
+      if (img.complete) {
+        clearLoadingState();
+      }
+      img.removeAttribute("data-src");
+    }
+  });
+}
 
 function showTestimonialPage(page) {
+  if (!testimonialGallery) return;
+  loadTestimonialImages(page);
   const cardWidth = testimonialGallery.querySelector('.testimonial-card').offsetWidth + 20; // card + gap
-  testimonialGallery.scrollLeft = page * cardWidth * 3; // 3 cards per page
+  testimonialGallery.scrollLeft = page * cardWidth * testimonialCardsPerPage;
 
-  testimonialDots.forEach(dot => dot.classList.remove('active-dot'));
-  testimonialDots[page].classList.add('active-dot');
+  testimonialDots.forEach((dot) => dot.classList.remove("active-dot"));
+  if (testimonialDots[page]) {
+    testimonialDots[page].classList.add("active-dot");
+  }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (testimonialGallery) {
+    showTestimonialPage(0);
+  }
+});
 
 // IMAGE POPUP
 document.addEventListener("DOMContentLoaded", function(){
@@ -88,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function(){
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("popupImage");
   const closeBtn = document.querySelector(".close-modal");
+  if (!modal || !modalImg || !closeBtn) return;
 
   document.querySelectorAll(".testimonial-card img").forEach(img => {
     img.addEventListener("click", function(){
@@ -115,29 +168,13 @@ document.addEventListener("click", function(e) {
   if (e.target.matches(".gallery-grid img")) {
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("popupImage");
+    if (!modal || !modalImg) return;
 
     modal.style.display = "block";
     modalImg.src = e.target.src;
   }
 
 });
-
-const closeBtn = document.querySelector(".close-modal");
-const modal = document.getElementById("imageModal");
-
-if(closeBtn){
-  closeBtn.onclick = function(){
-    modal.style.display = "none";
-  };
-}
-
-if(modal){
-  modal.onclick = function(e){
-    if(e.target === modal){
-      modal.style.display = "none";
-    }
-  };
-}
 
 // FAQ accordion behaviour
 function setupFAQ() {
@@ -164,3 +201,40 @@ function setupFAQ() {
 }
 
 document.addEventListener('DOMContentLoaded', setupFAQ);
+
+function loadLiteYouTube(wrapper) {
+  if (!wrapper || wrapper.dataset.loaded === "true") return;
+  const videoId = wrapper.dataset.videoId;
+  const title = wrapper.dataset.title || "YouTube video";
+  if (!videoId) return;
+
+  const iframe = document.createElement("iframe");
+  iframe.src = "https://www.youtube.com/embed/" + videoId + "?autoplay=1&rel=0&playsinline=1";
+  iframe.title = title;
+  iframe.loading = "lazy";
+  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+  iframe.allowFullscreen = true;
+
+  wrapper.innerHTML = "";
+  wrapper.appendChild(iframe);
+  wrapper.classList.add("is-loaded");
+  wrapper.removeAttribute("role");
+  wrapper.removeAttribute("tabindex");
+  wrapper.dataset.loaded = "true";
+}
+
+function setupLiteYouTube() {
+  const wrappers = document.querySelectorAll(".lite-youtube");
+  wrappers.forEach((wrapper) => {
+    wrapper.addEventListener("click", () => loadLiteYouTube(wrapper));
+    wrapper.addEventListener("touchend", () => loadLiteYouTube(wrapper), { passive: true });
+    wrapper.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        loadLiteYouTube(wrapper);
+      }
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", setupLiteYouTube);
