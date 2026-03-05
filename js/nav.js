@@ -43,7 +43,7 @@ const footerHTML = `
                         </div>
                         <div class="c-trust-mini-row__col" style="text-align:center;">
                             <img src="https://img.icons8.com/color/48/000000/verified-account--v2.png" alt="Udyam Registered" style="height:32px;width:32px;background:#fff;border-radius:6px;padding:2px;box-shadow:0 2px 8px rgba(0,0,0,0.10);">
-                            <div style="font-size:12px;color:#fff;opacity:0.8;">Udyam Registered</div>
+                            <div style="font-size:12px;color:#fff;opacity:0.8;">Govt. Registered</div>
                         </div>
                         <div class="c-trust-mini-row__col" style="text-align:center;">
                             <img src="https://img.icons8.com/color/48/000000/certificate.png" alt="ISO 9001:2015" style="height:32px;width:32px;background:#fff;border-radius:6px;padding:2px;box-shadow:0 2px 8px rgba(0,0,0,0.10);">
