@@ -138,3 +138,29 @@ if(modal){
     }
   };
 }
+
+// FAQ accordion behaviour
+function setupFAQ() {
+  const items = document.querySelectorAll('.faq-item');
+  items.forEach(item => {
+    const btn = item.querySelector('.faq-question');
+    const toggle = item.querySelector('.faq-toggle');
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const alreadyActive = item.classList.contains('active');
+        // collapse all
+        items.forEach(i => {
+          i.classList.remove('active');
+          const t = i.querySelector('.faq-toggle');
+          if (t) t.textContent = '+';
+        });
+        if (!alreadyActive) {
+          item.classList.add('active');
+          if (toggle) toggle.textContent = '-';
+        }
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', setupFAQ);
