@@ -280,6 +280,33 @@ white-space:nowrap;
 color:#ff7a00;
 }
 
+/* Call Button */
+.call-button {
+    display: none;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.call-button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    text-decoration: none;
+}
+
+.call-icon-img {
+    width: 24px;
+    height: 24px;
+}
+
+@media(max-width:768px){
+    .call-button {
+        display: flex;
+    }
+}
+
 /* Navigation links */
 .nav-links a{
 color:#444;

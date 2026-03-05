@@ -5,8 +5,11 @@ const navigationHTML = `
         <a href="/">
             <img src="images/logo.svg" alt="ExcelKidsHub Phonics Academy Logo">
         </a>
-        <a href="tel:+918793135679" class="header-phone">
-            +91 8793135679
+    </div>
+
+    <div class="call-button">
+        <a href="tel:+918793135679" aria-label="Call us">
+            <img src="https://res.cloudinary.com/dhqvlsb3l/image/upload/v1/assets/na/seo-website/icon-phone-round.svg" alt="Call ExcelKidsHub" class="call-icon-img">
         </a>
     </div>
 
